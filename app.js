@@ -74,7 +74,8 @@ app.get('/people', async (req, res) => {
 mongoose.connect(
   // If mongo is running on local machine and docker wants to access it
   // 'mongodb://host.docker.internal:27017/swfavorites',
-  'mongodb://172.17.0.2:27017/swfavorites', // Run docker container inspect <container-name> and find IP of mongodb
+  // 'mongodb://172.17.0.2:27017/swfavorites', // Run docker container inspect <container-name> and find IP of mongodb
+  'mongodb://mongo-container/swfavorites', // Name of the container which is part of the same network
   { useNewUrlParser: true },
   (err) => {
     if (err) {
