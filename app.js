@@ -51,10 +51,10 @@ app.post('/favorites', async (req, res) => {
 
 app.get('/movies', async (req, res) => {
   try {
-    const response = await axios.get('https://swapi.dev/api/films');
+    const response = await axios.get('https://swapi.py4e.com/api/films');
     res.status(200).json({ movies: response.data });
   } catch (error) {
-    res.status(500).json({ message: 'Something went wrong.' });
+    res.status(500).json({ message: `Something went wrong. ${error}` });
   }
 });
 
