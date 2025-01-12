@@ -9,6 +9,10 @@ const app = express();
 
 app.use(bodyParser.json());
 
+app.get("/", (req, res) => {
+  res.send("This is working!");
+})
+
 app.get('/favorites', async (req, res) => {
   const favorites = await Favorite.find();
   res.status(200).json({
